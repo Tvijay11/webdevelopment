@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthcare Dashboard</title>
+  <link rel="stylesheet" href="vijay.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>General</h2>
+      <ul>
+        <li>Dashboard</li>
+        <li>History</li>
+        <li>Calendar</li>
+        <li>Appointments</li>
+        <li>Statistics</li>
+        <li>Tests</li>
+        <li>Chat</li>
+        <li>Support</li>
+        <li>Settings</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <h1>HEALTH CARE</h1>
+        <div class="header-right">
+          <input type="text" placeholder="Search..." />
+          <span class="notif">🔔</span>
+          <span class="user">👤 vijay</span>
+          <button class="add-btn">+</button>
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <div class="overview">
+          <h2>Dashboard Overview</h2>
+          <div><h3>Healthy Heart 💚</h3></div>
+          <div><h3>Lungs 🫁 </h3></div>
+          <div><h3>kidneys  🩻</h3></div>
+          <div><h3>heart ❤️ </h3></div>
+        </div>
+
+        <div class="anatomy">
+          <h3>Anatomical View</h3>
+          <img src="healthcare.png">
+        <ul>
+            <li>Heart: Healthy</li>
+            <li>Lungs: Issue</li>
+          </ul>
+        </div>
+
+        <div class="calendar">
+          <h2>October 2021</h2>
+          <div class="dates">
+            <h3>Mon: 09:00</h3>
+            <h3>Tue: 11:00</h3>
+            <h3>Wed: 13:00</h3>
+            <h3>Thu: 15:00</h3>
+          </div>
+          <div class="appointments">
+            <div><h3>Dentist - 10:00 AM</h3></div>
+            <div><h3>Physiotherapy - 10:00 AM</h3></div>
+          </div>
+        </div>
+
+        <div class="upcoming">
+          <h3>Upcoming Schedule</h3>
+          <div class="appointment-card">
+            <p>monday: Health Checkup</p>
+          </div>
+          <div class="appointment-card">
+            <p>Tuesday: Ophthalmologist</p>
+          </div>
+          <div class="appointment-card">
+            <p>Wednesday: Ophthalmologist</p>
+            </div>
+            <div class="appointment-card">
+            <p>Firday: Healthcheckup</p>
+            </div>
+            <div class="appointment-card">
+            <p>Saturday: Healthcheckup</p>
+            </div>
+        </div>
+
+        <div class="activity">
+          <h3>Activity</h3>
+          <p>3 appointments this week</p>
+          <div class="bars">
+            <div class="bar" style="height: 60%"></div>
+            <div class="bar" style="height: 20%"></div>
+            <div class="bar" style="height: 40%"></div>
+            <div class="bar" style="height: 80%"></div>
+            <div class="bar" style="height: 90%"></div>
+            <div class="bar" style="height: 60%"></div>
+            <div class="bar" style="height: 20%"></div>
+            <div class="bar" style="height: 40%"></div>
+            <div class="bar" style="height: 80%"></div>
+            <div class="bar" style="height: 90%"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+  // Cursor-based parallax animation
+  document.addEventListener('mousemove', (e) => {
+    const { clientX: x, clientY: y } = e;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    const moveX = (x - centerX) / 100;
+    const moveY = (y - centerY) / 100;
+
+    document.querySelectorAll('.overview, .calendar, .upcoming, .activity, .anatomy').forEach(el => {
+      el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  });
+
+  document.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.overview, .calendar, .upcoming, .activity, .anatomy').forEach(el => {
+      el.style.transform = `translate(0px, 0px)`;
+    });
+  });
+</script>
+</body>
+</html>
